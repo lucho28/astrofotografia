@@ -21,10 +21,6 @@ type
     DataSourceObservacion: TDataSource;
     ClientDataSetObservacion: TClientDataSet;
     FDTableObseracion: TFDTable;
-    FDQueryInstrumento: TFDQuery;
-    DataSourceInstrumento: TDataSource;
-    ClientDataSetInstrumento: TClientDataSet;
-    FDTableInstrumento: TFDTable;
     FDQueryCamara: TFDQuery;
     DataSourceCamara: TDataSource;
     ClientDataSetCamara: TClientDataSet;
@@ -33,6 +29,9 @@ type
     DataSourceProcesado: TDataSource;
     ClientDataSetProcesado: TClientDataSet;
     FDTableProcesado: TFDTable;
+    FDQueryInstrumento: TFDQuery;
+    DataSourceInstrumento: TDataSource;
+    ClientDataSetInstrumento: TClientDataSet;
   private
     { Private declarations }
   public

@@ -11,12 +11,15 @@ type
   TForm6 = class(TForm)
     DBGrid1: TDBGrid;
     Nueva: TButton;
-    Button2: TButton;
-    Button1: TButton;
+    ButtonModificar: TButton;
     DBGrid2: TDBGrid;
+    DBGrid3: TDBGrid;
+    DBGrid4: TDBGrid;
+    DBGrid5: TDBGrid;
+    ButtonSalir: TButton;
     procedure NuevaClick(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
+    procedure ButtonSalirClick(Sender: TObject);
+    procedure ButtonModificarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,14 +33,14 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm6.Button1Click(Sender: TObject);
+procedure TForm6.ButtonModificarClick(Sender: TObject);
 begin
   form2.Show;
 end;
 
-procedure TForm6.Button2Click(Sender: TObject);
+procedure TForm6.ButtonSalirClick(Sender: TObject);
 begin
-  FormModificar.Show;
+  Form6.Close;
 end;
 
 procedure TForm6.NuevaClick(Sender: TObject);

@@ -4,26 +4,23 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Unit7, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Unit7, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TFormNueva = class(TForm)
     nombreObservador: TEdit;
     Label1: TLabel;
-    apellidoObservador: TEdit;
     Label2: TLabel;
     lugarObservacion: TEdit;
     fechaObservacion: TEdit;
     horaObseracion: TEdit;
     objetoObseracion: TEdit;
-    comentaciosObservacion: TEdit;
     Label3: TLabel;
     tipoInstrumento: TEdit;
     marcaInstrumento: TEdit;
     modeloInstrumento: TEdit;
     aperturaInstrumento: TEdit;
     focalInstrumento: TEdit;
-    comentariosInstrumento: TEdit;
     condAtmObservacion: TEdit;
     Label4: TLabel;
     tipoCamara: TEdit;
@@ -34,9 +31,36 @@ type
     cantTomasCamara: TEdit;
     Label5: TLabel;
     softProcesado: TEdit;
-    procesoProcesado: TEdit;
     Button1: TButton;
+    Label6: TLabel;
+    Label7: TLabel;
+    Button2: TButton;
+    apellidoObservador: TEdit;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    Label25: TLabel;
+    Label26: TLabel;
+    Label27: TLabel;
+    Memo1: TMemo;
+    Memo2: TMemo;
+    Memo3: TMemo;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,6 +83,8 @@ with DataModule7 do
         FDQueryObservador.SQL.Clear;
         FDQueryObservacion.SQL.Clear;
         FDQueryInstrumento.SQL.Clear;
+        FDQueryCamara.SQL.Clear;
+        FDQueryProcesado.SQL.Clear;
 
         // datos del observador
 
@@ -77,7 +103,7 @@ with DataModule7 do
         ' objeto,comentarios,condiciones) values ' +
         '('+QuotedStr(lugarObservacion.Text)+','+QuotedStr(fechaObservacion.Text)+
         ','+QuotedStr(horaObseracion.Text)+','+QuotedStr(objetoObseracion.Text)+
-        ','+QuotedStr(comentaciosObservacion.Text)+','+QuotedStr(condAtmObservacion.Text)+')';
+        ','+QuotedStr(memo1.Text)+','+QuotedStr(condAtmObservacion.Text)+')';
         FDQueryObservacion.ExecSQL;
         FDQueryObservacion.SQL.Clear;
         FDQueryObservacion.SQL.Text := ' SELECT * FROM observacion';
@@ -90,7 +116,7 @@ with DataModule7 do
         ' apertura,focal,comentarios) values ' +
         '('+QuotedStr(tipoInstrumento.Text)+','+QuotedStr(marcaInstrumento.Text)+
         ','+QuotedStr(modeloInstrumento.Text)+','+QuotedStr(aperturaInstrumento.Text)+
-        ','+QuotedStr(focalInstrumento.Text)+','+QuotedStr(comentariosInstrumento.Text)+')';
+        ','+QuotedStr(focalInstrumento.Text)+','+QuotedStr(memo3.Text)+')';
         FDQueryInstrumento.ExecSQL;
         FDQueryInstrumento.SQL.Clear;
         FDQueryInstrumento.SQL.Text := ' SELECT * FROM instrumento';
@@ -113,7 +139,7 @@ with DataModule7 do
         // datos del procesado
 
         FDQueryProcesado.SQL.Text := ' INSERT INTO procesado (software,procesos) values '+
-        '('+QuotedStr(softProcesado.Text)+','+QuotedStr(procesoProcesado.Text)+')';
+        '('+QuotedStr(softProcesado.Text)+','+QuotedStr(memo2.Text)+')';
         FDQueryProcesado.ExecSQL;
         FDQueryProcesado.SQL.Clear;
         FDQueryProcesado.SQL.Text := ' SELECT * FROM procesado';
@@ -133,5 +159,10 @@ with DataModule7 do
 end;
 
 
+
+procedure TFormNueva.Button2Click(Sender: TObject);
+begin
+  FormNueva.Close;
+end;
 
 end.

@@ -1,9 +1,9 @@
 object Form6: TForm6
   Left = 0
   Top = 0
-  Caption = 'Form6'
-  ClientHeight = 472
-  ClientWidth = 750
+  Caption = 'Observaciones'
+  ClientHeight = 350
+  ClientWidth = 450
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,10 +14,10 @@ object Form6: TForm6
   PixelsPerInch = 96
   TextHeight = 13
   object DBGrid1: TDBGrid
-    Left = 32
-    Top = 200
-    Width = 105
-    Height = 97
+    Left = 24
+    Top = 145
+    Width = 57
+    Height = 89
     DataSource = DataModule7.DataSourceObservador
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -25,6 +25,7 @@ object Form6: TForm6
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    Visible = False
     Columns = <
       item
         Expanded = False
@@ -63,43 +64,86 @@ object Form6: TForm6
       end>
   end
   object Nueva: TButton
-    Left = 256
-    Top = 16
+    Left = 123
+    Top = 32
     Width = 209
     Height = 73
     Caption = 'Nueva'
     TabOrder = 1
     OnClick = NuevaClick
   end
-  object Button2: TButton
-    Left = 256
-    Top = 129
+  object ButtonModificar: TButton
+    Left = 123
+    Top = 145
     Width = 209
-    Height = 65
-    Caption = 'Visualizar'
+    Height = 73
+    Caption = 'Visualizar/Modificar'
     TabOrder = 2
-    OnClick = Button2Click
-  end
-  object Button1: TButton
-    Left = 552
-    Top = 72
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 3
-    OnClick = Button1Click
+    OnClick = ButtonModificarClick
   end
   object DBGrid2: TDBGrid
-    Left = 184
-    Top = 224
-    Width = 113
-    Height = 89
+    Left = 385
+    Top = 158
+    Width = 57
+    Height = 91
     DataSource = DataModule7.DataSourceObservacion
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Visible = False
+  end
+  object DBGrid3: TDBGrid
+    Left = 24
+    Top = 15
+    Width = 57
+    Height = 97
+    DataSource = DataModule7.DataSourceInstrumento
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    Visible = False
+  end
+  object DBGrid4: TDBGrid
+    Left = 24
+    Top = 245
+    Width = 41
+    Height = 97
+    DataSource = DataModule7.DataSourceCamara
+    TabOrder = 5
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Visible = False
+  end
+  object DBGrid5: TDBGrid
+    Left = 401
+    Top = 32
+    Width = 41
+    Height = 120
+    DataSource = DataModule7.DataSourceProcesado
+    TabOrder = 6
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Visible = False
+  end
+  object ButtonSalir: TButton
+    Left = 123
+    Top = 256
+    Width = 209
+    Height = 73
+    Caption = 'Salir'
+    TabOrder = 7
+    OnClick = ButtonSalirClick
   end
 end

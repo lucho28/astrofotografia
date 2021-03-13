@@ -19,6 +19,7 @@ object DataModule7: TDataModule7
     Top = 88
   end
   object DataSourceObservador: TDataSource
+    AutoEdit = False
     DataSet = FDQueryObservador
     Left = 128
     Top = 120
@@ -47,8 +48,9 @@ object DataModule7: TDataModule7
     Top = 184
   end
   object DataSourceObservacion: TDataSource
+    AutoEdit = False
     DataSet = FDQueryObservacion
-    Left = 120
+    Left = 128
     Top = 216
   end
   object ClientDataSetObservacion: TClientDataSet
@@ -63,33 +65,7 @@ object DataModule7: TDataModule7
     MasterSource = DataSourceObservacion
     Connection = EduardoConnection
     Left = 312
-    Top = 200
-  end
-  object FDQueryInstrumento: TFDQuery
-    MasterSource = DataSourceInstrumento
-    Connection = EduardoConnection
-    SQL.Strings = (
-      'select * from instrumento')
-    Left = 40
-    Top = 288
-  end
-  object DataSourceInstrumento: TDataSource
-    DataSet = FDTableInstrumento
-    Left = 112
-    Top = 312
-  end
-  object ClientDataSetInstrumento: TClientDataSet
-    Aggregates = <>
-    MasterSource = DataSourceInstrumento
-    PacketRecords = 0
-    Params = <>
-    Left = 200
-    Top = 288
-  end
-  object FDTableInstrumento: TFDTable
-    Connection = EduardoConnection
-    Left = 288
-    Top = 312
+    Top = 208
   end
   object FDQueryCamara: TFDQuery
     Active = True
@@ -100,11 +76,15 @@ object DataModule7: TDataModule7
     Top = 400
   end
   object DataSourceCamara: TDataSource
+    AutoEdit = False
+    DataSet = FDQueryCamara
     Left = 112
     Top = 392
   end
   object ClientDataSetCamara: TClientDataSet
     Aggregates = <>
+    MasterSource = DataSourceCamara
+    PacketRecords = 0
     Params = <>
     Left = 216
     Top = 400
@@ -123,11 +103,15 @@ object DataModule7: TDataModule7
     Top = 472
   end
   object DataSourceProcesado: TDataSource
+    AutoEdit = False
+    DataSet = FDQueryProcesado
     Left = 120
     Top = 464
   end
   object ClientDataSetProcesado: TClientDataSet
     Aggregates = <>
+    MasterSource = DataSourceProcesado
+    PacketRecords = 0
     Params = <>
     Left = 216
     Top = 480
@@ -136,5 +120,27 @@ object DataModule7: TDataModule7
     Connection = EduardoConnection
     Left = 304
     Top = 480
+  end
+  object FDQueryInstrumento: TFDQuery
+    Active = True
+    Connection = EduardoConnection
+    SQL.Strings = (
+      'select * from instrumento')
+    Left = 48
+    Top = 296
+  end
+  object DataSourceInstrumento: TDataSource
+    AutoEdit = False
+    DataSet = FDQueryInstrumento
+    Left = 128
+    Top = 320
+  end
+  object ClientDataSetInstrumento: TClientDataSet
+    Aggregates = <>
+    MasterSource = DataSourceInstrumento
+    PacketRecords = 0
+    Params = <>
+    Left = 224
+    Top = 304
   end
 end
